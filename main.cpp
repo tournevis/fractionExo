@@ -15,10 +15,10 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     cout << "Hello, World!\n";
     
-    FractionZ a(4,5);      //Déclare une fraction valant 4/5
-    FractionZ b(2,2);        //Déclare une fraction valant 2/1 (ce qui vaut 2)      //Déclare deux fractions valant 0
+    FractionZ a(28,5);      //Déclare une fraction valant 4/5
+    FractionZ b(5,10);        //Déclare une fraction valant 2/1 (ce qui vaut 2)      //Déclare deux fractions valant 0
     FractionZ c(0,0);
-    FractionZ d(0,0);
+    FractionZ d(2,0);
     
     c = a+b;               //Calcule 4/5 + 2/1 = 14/5
     

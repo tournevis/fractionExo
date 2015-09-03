@@ -14,7 +14,8 @@ using namespace std;
 
 
 FractionZ::FractionZ( int firstNumber , int secondNumber) : m_firstNumber(firstNumber), m_secondNumber(secondNumber){
-    simplify()  ;
+    if(m_secondNumber !=0)
+        simplify()  ;
 }
 /*FractionZ::FractionZ( int entier ) : m_firstNumber(entier), m_secondNumber(1){
 }
@@ -86,7 +87,7 @@ FractionZ& FractionZ::operator+=(FractionZ const& autre){
     
     m_firstNumber = autre.m_secondNumber * m_firstNumber + m_secondNumber *autre.m_firstNumber;
     m_secondNumber = m_secondNumber * autre.m_secondNumber;
-    
+    simplify();
     return *this;
     
 }
@@ -100,6 +101,7 @@ FractionZ operator-(FractionZ const& a, FractionZ const& b){
 FractionZ& FractionZ::operator-=(FractionZ const& autre){
     m_firstNumber = m_firstNumber* autre.m_secondNumber - autre.m_firstNumber * m_secondNumber;
     m_secondNumber *= autre.m_secondNumber;
+    simplify();
     return *this;
 }
 
@@ -114,7 +116,7 @@ FractionZ& FractionZ::operator*=( FractionZ const& autre){
     
     m_firstNumber *= autre.m_firstNumber;
     m_secondNumber *= autre.m_secondNumber;
-    
+    simplify();
     return *this;
 }
 
